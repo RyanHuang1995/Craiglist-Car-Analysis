@@ -149,19 +149,6 @@ d3.csv(url).then(function(data){
     groups.on("mouseover", toolTip.show).on("mouseout", toolTip.hide);
 
 
-// var circleGroup = groups.selectAll("circle")
-    // .data(data)
-    // .enter()
-    // .append("circle")
-    // .attr("class", "points")
-    // .attr("r", "15")
-    // .attr("cy", function(data) {return yScale(data.healthcare)})
-    // .attr("cx", function(data) {return xScale(data.poverty)})
-    // .attr("fill", "rgb(17, 224, 252)")
-    // .attr("stroke", "black")
-    // .attr("stroke-width",0.5)
-    // .on("mouseover", toolTip.show)
-    // .on("mouseout", toolTip.hide);
 
     circles.call(toolTip);
 

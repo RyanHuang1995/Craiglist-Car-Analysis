@@ -24,10 +24,15 @@ def index():
 
 @app.route("/accord")
 def accord():
+
+
     return jsonify(accordData)
 
 @app.route("/civic")
 def civic():
+
+
+    
     return jsonify(civicData)
 
 @app.route("/camry")
