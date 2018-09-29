@@ -69,10 +69,10 @@ def make(choice):
         count = 1
 
     
-        dictionary = {"Result-Number": count, "Post Title": row.title, "Make": row.make, "Model": row.model, "Year": row.year, "Condition": row.condition, 
+        dictionary = {"Result_Number": count, "Post_Title": row.title, "Make": row.make, "Model": row.model, "Year": row.year, "Condition": row.condition, 
                        "Cyclinder": row.cylinders, "Drive": row.drive, "Fuel": row.fuel, "Odometer": row.odometer, "Color": row.paint_color,
-                       "Size": row.size, "Title-Status": row.title_status, "Transmission": row.transmission, "Type": row.type,
-                       "Price": row.price, "VIN": row.VIN, "Post Link": row.link}
+                       "Size": row.size, "Title_Status": row.title_status, "Transmission": row.transmission, "Type": row.type,
+                       "Price": row.price, "VIN": row.VIN, "Post_Link": row.link}
         
         count+=1
 
