@@ -31,15 +31,28 @@
 
             <h5 style="text-align:center">MAKE / MODEL :</h5>
 
-            <select id="car" onchange="getData(this.value)">
+            <!-- <select id="car" onchange="getData(this.value)"> -->
             <!-- for loop to create option html tags for each sample id-->
-                <option value="accord">Honda Accord</option>
+                <!-- <option value="accord">Honda Accord</option>
                 <option value="civic">Honda Civic</option>
                 <option value="prius">Toyota Prius</option>
                 <option value="altima">Nissan Altima</option>
 
+                    
+            </select> -->
+            <div class="card-body bg-light text-dark">
+                <input type="checkbox" id="accordCheck" onclick="myFunction()">Honda Accord
+                <br>
+                <input type="checkbox" id="civicCheck" onclick="myFunction()">Honda Civic 
+                <br>
+                <input type="checkbox" id="corollaCheck" onclick="myFunction()">Toyota Corolla
+                <br>
+                <input type="checkbox" id="camryCheck" onclick="myFunction()">Toyota Camry
+                <br>
+                <input type="checkbox" id="altimaCheck" onclick="myFunction()">Nissan Altima
 
-            </select>
+
+            </div>
         </div>
 
         <div class="card text-white bg-info mb-3">

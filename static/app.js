@@ -1,3 +1,23 @@
+//checkbox:
+
+function myFunction() {
+    // Get the checkbox
+    var checkBox = document.getElementById("myCheck");
+    // Get the output text
+    var text = document.getElementById("text");
+  
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true){
+      text.style.display = "block";
+    } else {
+      text.style.display = "none";
+    }
+  }
+
+
+
+
+
 
 url = "../Car Price data/altima_data.csv"
 
@@ -16,3 +36,6 @@ d3.csv(url).then(function(data){
     var scatterSVG = d3.select(".scatter").append("svg");
 
 });
+
+
+
