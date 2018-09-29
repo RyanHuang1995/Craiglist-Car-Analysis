@@ -64,9 +64,10 @@ def make(choice):
 
     carResultList = []
 
+    count = 1
+
     #loop through table queries and create dictionary
     for row in result:
-        count = 1
 
     
         dictionary = {"Result_Number": count, "Post_Title": row.title, "Make": row.make, "Model": row.model, "Year": row.year, "Condition": row.condition, 
