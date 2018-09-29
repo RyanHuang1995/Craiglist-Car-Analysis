@@ -1,0 +1,23 @@
+
+.container {
+    max-width: 100%;
+
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 300px;
+    max-width: 300px;
+    background-color:whitesmoke;
+    padding:1%;
+}
+
+.bar {
+    padding:2.5%!important;
+}
+
+
