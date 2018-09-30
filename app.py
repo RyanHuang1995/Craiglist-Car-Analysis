@@ -2,7 +2,7 @@
 import os
 from flask import Flask
 from flask import jsonify
-from flask import request
+from flask import request, redirect
 from flask import make_response
 from flask import url_for
 from flask import render_template
@@ -24,7 +24,6 @@ app = Flask(__name__)
 
 
 
-
 #create engine object based on URL
 engine = create_engine("sqlite:///Car-Price-Data/Craiglist.db", connect_args={'check_same_thread': False}, echo=True)
 
@@ -42,20 +41,21 @@ session = Session(bind=engine)
 Craiglist_Car = Base.classes.Craiglist_Car
 
 
+
+
+
 #---------------------------------------------
 
-#routes 
+
 @app.route("/")
-def home():
+def homepage():
     return render_template("index.html")
 
 
-
-#route to retrieve car model data
+#api call route
 @app.route("/api/<choice>")
-def make(choice):
+def carMake(choice):
     
-    #test
     chosen = choice.title()
     
     #manipulate string to query correct rows 
