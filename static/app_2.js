@@ -8,9 +8,9 @@ function scatterPlot(route) {
     var svgWidth = 1000;
     var svgHeight = 700;
 
-
     var widthScale = 1;
     var heightScale = 1;
+
     //setting margins for the chart
     var chartMargin = {
         top: 50,
@@ -23,7 +23,7 @@ function scatterPlot(route) {
     var chartHeight = svgHeight - chartMargin.top - chartMargin.bottom;
     var chartWidth = svgWidth - chartMargin.left - chartMargin.right;
 
-        //append svg element to the body element
+    //append svg element to the body element
     var svg = d3.select(".scatter").append("svg")
         .style("border", "2px black solid")
         .attr("height", svgHeight)
