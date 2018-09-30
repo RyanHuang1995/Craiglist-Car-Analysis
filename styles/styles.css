@@ -1,23 +1,36 @@
 
 .container {
     max-width: 100%;
-
+    padding:-50px;
 }
 
 .wrapper {
     display: flex;
-    align-items: stretch;
+    /* align-items: stretch; */
 }
 
+
 #sidebar {
-    min-width: 300px;
-    max-width: 300px;
+    display:inline-block;
     background-color:whitesmoke;
     padding:1%;
+    margin: 0;
+    
 }
+
+
+.card {
+    padding:1%;
+}
+
+nav {
+    display:inline-block!important;
+}
+
 
 .bar {
     padding:2.5%!important;
 }
+
 
 

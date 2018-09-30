@@ -7,6 +7,7 @@ from flask import make_response
 from flask import url_for
 from flask import render_template
 
+
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
@@ -25,7 +26,7 @@ app = Flask(__name__)
 
 
 #create engine object based on URL
-engine = create_engine("sqlite:///Car-Price-Data/Craiglist.db")
+engine = create_engine("sqlite:///Car-Price-Data/Craiglist.db", connect_args={'check_same_thread': False}, echo=True)
 
 #reflect database
 Base = automap_base()
@@ -78,6 +79,7 @@ def make(choice):
         count+=1
 
         carResultList.append(dictionary)
+
 
     return jsonify(carResultList)
 
