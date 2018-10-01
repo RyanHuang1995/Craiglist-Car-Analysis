@@ -54,4 +54,18 @@ nav {
 
 
 
+/* 
+    Table 
+
+*/
+
+ 
+
+#craigTable {
+    display: block;
+    height: 300px!important;
+    width: 1500px!important;
+    overflow-y: scroll!important;  
+    scroll-behavior:smooth;
+}
 

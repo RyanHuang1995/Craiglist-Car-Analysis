@@ -53,9 +53,7 @@
                             <option value="corolla">Toyota Corolla</option>
                             <option value="camry">Toyota Camry</option>
                             <option value="altima">Nissan Altima</option>
-
                         </select>
-
                     </div>
 
 
@@ -69,7 +67,8 @@
                     </div>
 
                     <div class="card-body bg-light text-dark">
-                        <p>Make: <span id="makeInfo"></span></p>
+                        <p>Make: <span id=""></span></p>
+                        <input class="form-control" id="Make" type="text" placeholder="Nissan">
                         <p>Model: <span id="modelInfo"></span></p>
                         <p>Year: <span id="yearInfo"></span></p>
                         <p>Transmission: <span id="transmissionInfo"></span></p>
@@ -79,7 +78,6 @@
                         <h5>Price: <span id="priceInfo"></span></h5>
                         <p>Color: <span id="colorInfo"></span></p>
                         <p>Condition: <span id="conditionInfo"></span></p>
-
                     </div>
 
                 </div>
@@ -94,7 +92,9 @@
             <div class="row">
 
                 <div class="col-lg-12 border border-info rounded">
-                    <h1>Craigslist Used Car Posts - Web Dashboard</h1>
+                    <br>
+                    <h1>Used Car Dashboard</h1>
+                    <br>
                 </div>
 
             </div>
@@ -103,7 +103,22 @@
             <div class="row">
 
                 <div class="col-md-12 border border-info rounded ">
-                    <div id="table" class="bar">
+                    <div id="table-area" class="bar">
+                            <table id="craigTable" class="table table-striped table-hover table-responsive-md table-fixed">
+                                <thead>
+                                    <tr>
+                                    <th class="table-head">Make</th>
+                                    <th class="table-head">Model</th>
+                                    <th class="table-head">Year</th>
+                                    <th class="table-head">Odometer</th>
+                                    <th class="table-head">Transmission</th>
+                                    <th class="table-head">Condition</th>
+                                    <th class="table-head">Fuel</th>
+                                    <th class="table-head">Link</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>                    
                     </div>
                 </div>
             </div>
@@ -113,6 +128,8 @@
                 <!-- gauge -->
                 <div class="col-lg-6 border border-info rounded">
                     <div id="scatter">
+                        <br>
+                        <h2>Used Car Price vs. Odometer</h2>
                     </div>
                 </div>
 
@@ -120,7 +137,8 @@
                 <!-- histogram chart -->
                 <div class="col-lg-6 border border-info rounded">
                     <br>
-                    <h3>BarChart</h3>
+                    <h3>Used Car Price Frequency</h3>
+                    <hr>
                     <br>
                     <br>
                     <div class="barchart">
@@ -142,4 +160,6 @@
 </body>
 
 </html>
+
+
 

@@ -17,7 +17,7 @@ function scatterPlot(route) {
 
             console.log("running scatter plot foreach");
             data.Odometer = +data.Odometer;
-            data.Price = +data.Price.substring(1);
+            data.Price = +data.Price;
             console.log(data.Price);
             console.log(data.Odometer);
 
@@ -92,14 +92,14 @@ function barChart(route) {
 
         data.forEach(function (data) {
             console.log("running bar chart foreach");
-            data.Price = +data.Price.substring(1);
+            data.Price = +data.Price;
         });
 
 
         data.forEach(function (data) {
             numbers.push(data.Price)
 
-            if (data.Price >= 0 && ata.Price <= 3000) {
+            if (data.Price >= 0 && data.Price <= 3000) {
                 range1++
             } 
             else if (data.Price >= 3001 && data.Price <= 6000) {
@@ -172,10 +172,93 @@ function barChart(route) {
 
 }
 
-// // create tableChart
-// function tableChart(route) {
+/*
+--------------------------------------------------------------------------
+*/
+// // CREATE TABLE 
 
-// }
+// ------------------------------------
+
+// get table references
+var tbody = d3.select("tbody");
+
+//construct table
+function buildTable(route) {
+	d3.json(`/api/${route}`).then(function(data){
+  // First, clear out any existing data
+        tbody.html("");
+
+        // Next, loop through each object in the data
+        // and append a row and cells for each value in the row
+        data.forEach((dataRow) => {
+            
+            // Append a row to the table body
+            var row = tbody.append("tr");
+            var cell = row.append("td");
+            
+            cell.text(val);
+
+
+
+
+
+
+
+            // // Loop through each field in the dataRow and add
+            // // each value as a table cell (td)
+            // Object.values(dataRow).forEach((val) => {
+            //     var cell = row.append("td");
+            //     cell.text(val);
+            });
+        });
+    };
+
+
+
+
+//Keep Track of all filters
+var filters = {};
+
+
+function updateFilters() {
+
+    // Save the element, value, and id of the filter that was changed
+    var changedElement = d3.select(this).select("input");
+    var elementValue = changedElement.property("value");
+    var filterId = changedElement.attr("id");
+
+    // If a filter value was entered then add that filterId and value
+    // to the filters list. Otherwise, clear that filter from the filters object
+    if (elementValue) {
+        filters[filterId] = elementValue;
+    }
+    else {
+        delete filters[filterId];
+}
+
+// Call function to apply all filters and rebuild the table
+filterTable();
+
+
+
+function filterTable() {
+
+// Set the filteredData to the tableData
+let filteredData = tableData;
+
+// Loop through all of the filters and keep any data that
+// matches the filter values
+Object.entries(filters).forEach(([key, value]) => {
+    filteredData = filteredData.filter(row => row[key] === value);
+});
+
+// Finally, rebuild the table using the filtered Data
+buildTable(filteredData);
+}
+
+// Attach an event to listen for changes to each filter
+d3.selectAll(".filter").on("change", updateFilters);
+
 
 
 
@@ -191,7 +274,7 @@ function initialize(defaultURL) {
 
     scatterPlot(defaultURL);
     barChart(defaultURL);
-    // tableChart(defaultURL);
+    buildTable(defaultURL);
 
 }
 
@@ -212,6 +295,7 @@ function getData(value) {
     //update charts
     scatterPlot(value);
     barChart(value);
+    buildTable(value);
     // tableChart(value);
     // gaugeChart(value);
 }
