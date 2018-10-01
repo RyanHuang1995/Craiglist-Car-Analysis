@@ -1,0 +1,115 @@
+
+.container {
+    max-width: 100%;
+    padding:-50px;
+}
+
+.wrapper {
+    display: flex;
+    /* align-items: stretch; */
+}
+
+
+#sidebar {
+    display:inline-block;
+    background-color:whitesmoke;
+    padding:1%;
+    margin: 0;
+    
+}
+
+
+.card {
+    padding:1%;
+}
+
+nav {
+    display:inline-block!important;
+}
+
+
+.bar {
+    padding:2.5%!important;
+}
+
+
+
+
+
+/*
+
+
+changes that need to be made 
+
+
+
+*/
+
+.bar {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+.bar {
+    display: block;
+    margin:auto;
+}
+
+/*
+
+tooltip
+*/
+
+.tooltip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    padding-bottom:1px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  /* Creates a small triangle extender for the tooltip */
+.tooltip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+
+circle:hover {
+    fill: green;
+    opacity:1;
+
+}
+
+
+
+/* 
+    responsive scatter plot 
+*/
+
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
