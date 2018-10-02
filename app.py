@@ -3,17 +3,13 @@ import os
 from flask import Flask
 from flask import jsonify
 from flask import request, redirect
-from flask import make_response
-from flask import url_for
 from flask import render_template
 
 
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
-import pymysql
 
-pymysql.install_as_MySQLdb()
 
 
 #-------------------------------------------
@@ -61,7 +57,7 @@ def carMake(choice):
     #manipulate string to query correct rows 
     
     #query for data by model
-    result = session.query(Craiglist_Car).filter(Craiglist_Car.model == chosen).all()
+    result = session.query(Craiglist_Car).filter(Craiglist_Car.Model == chosen).all()
 
     carResultList = []
 
@@ -70,11 +66,10 @@ def carMake(choice):
     #loop through table queries and create dictionary
     for row in result:
 
-    
-        dictionary = {"Result_Number": count, "Post_Title": row.title, "Make": row.make, "Model": row.model, "Year": row.year, "Condition": row.condition, 
-                       "Cyclinder": row.cylinders, "Drive": row.drive, "Fuel": row.fuel, "Odometer": row.odometer, "Color": row.paint_color,
-                       "Size": row.size, "Title_Status": row.title_status, "Transmission": row.transmission, "Type": row.type,
-                       "Price": row.price, "VIN": row.VIN, "Post_Link": row.link}
+        dictionary = {"Result_Number": count, "Post_Title": row.Title, "Make": row.Make, "Model": row.Model, "Year": row.Year, "Condition": row.Condition, 
+                       "Cylinder": row.Cylinders, "Drive": row.Drive, "Fuel": row.Fuel, "Odometer": row.Odometer, "Color": row.Paint_color,
+                       "Size": row.Size, "Title_Status": row.Title_status, "Transmission": row.Transmission, "Type": row.Type,
+                    "VIN": row.VIN, "Post_Link": row.Link, "Price": row.Price}
         
         count+=1
 
