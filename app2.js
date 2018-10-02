@@ -1,12 +1,11 @@
 // from data.js
-var tableData = data;
+//var tableData = data;
 
+var tableData = data
 // get table references
 var tbody = d3.select("tbody");
 
-
-var function buildTable(route) {
-	d3.json(`/api/${route}`).then(function(data){
+function buildTable(data) {
   // First, clear out any existing data
   tbody.html("");
 
@@ -24,7 +23,7 @@ var function buildTable(route) {
     });
   });
 }
-};
+
 // Keep Track of all filters
 var filters = {};
 
